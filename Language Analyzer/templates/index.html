@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure AI Language Analyzer</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+
+    <div class="hero">
+
+        <h1>🌐 Azure AI Language Analyzer</h1>
+
+        <p>
+            Detect language, redact personal information and generate AI summaries
+            using Azure AI Language.
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <label>Enter Text</label>
+
+        <textarea
+            id="textInput"
+            placeholder="Paste any text here..."
+        ></textarea>
+
+        <div class="counter">
+            <span id="count">0</span> characters
+        </div>
+
+        <div class="buttons">
+
+            <button id="languageBtn" class="blue">
+                🌍 Detect Language
+            </button>
+
+            <button id="piiBtn" class="purple">
+                🔒 Redact PII
+            </button>
+
+            <button id="summaryBtn" class="green">
+                📝 Summarize
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <div class="result-header">
+
+            <h2>Results</h2>
+
+            <button id="copyBtn">
+                📋 Copy
+            </button>
+
+        </div>
+
+        <div id="loading" hidden>
+
+            <div class="spinner"></div>
+
+            <p>Processing...</p>
+
+        </div>
+
+        <div id="result">
+
+            Your results will appear here.
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
